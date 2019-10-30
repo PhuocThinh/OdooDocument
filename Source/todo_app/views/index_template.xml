@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="index_template" name="My Todo List">
+        <link href="/todo_app/static/src/css/index.css" rel="stylesheet"/>
+        <div id="wrap" class="container content">
+            <h1 style = "text-align:center">The First Application Of Thinh How Are You</h1>
+                <!-- List of Tasks -->
+                <div class="list-team">
+                     <h3>List Team Action</h3>
+                     <t t-foreach="tasks" t-as="task">
+                        <div class="row">
+                            <span t-field="task.name" />
+                        </div>
+                    </t>
+                </div>
+        </div>
+    </template>
+</odoo>

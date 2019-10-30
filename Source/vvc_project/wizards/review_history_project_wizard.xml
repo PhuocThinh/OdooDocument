@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<odoo>
+     <record id="review_history_form_project_wizard_view" model="ir.ui.view">
+        <field name="name">view.review.history.project.wizard.form</field>
+        <field name="model">review.history.project.wizard</field>
+        <field name ="arch" type="xml">
+            <form string = "Create Review History Project Wizard">
+                <group>
+                    <group>
+                        <field name="user_id"/>
+                        <field name = "hours" widget="float_time"/>
+                        <field name="type"/>
+                        <field name = 'number_of_issue'/>
+                    </group>
+                    <group>
+                        <field name="task_id"/>
+                        <field name="project_id"/>
+                        <field name="note"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="detail_ids">
+                        <form string="Create Issue Detail">
+                            <group>
+                                <field name="status"/>
+                                <field name = "content"/>
+                            </group>
+                        </form>
+                        <tree string = "Details ID">
+                            <field name="content"/>
+                            <field name="status"/>
+                        </tree>
+                    </field>
+                </group>
+                <footer>
+                   <button name="create_review_history_project" string="Save" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id = "action_review_history_project_wizard" model="ir.actions.act_window">
+         <field name="name">Project Review History Wizard</field>
+         <field name="res_model">review.history.project.wizard</field>
+         <field name="view_mode">form</field>
+         <field name="target">new</field>
+    </record>
+</odoo>

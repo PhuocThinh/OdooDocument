@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem
+        id="menu_project_review_history"
+        name="Review History"
+        parent="project.menu_project_report"
+        sequence="5"
+        action = "action_review_history_project"
+   />
+</odoo>
